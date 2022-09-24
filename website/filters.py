@@ -1,4 +1,8 @@
 import django_filters
+from website.models import Product
 
 class ProductsFilter(django_filters.FilterSet):
-    pass
+    
+    class Meta:
+        model = Product
+        fields = {'categories':['exact'] , 'size':['exact'] ,  'color':['exact'] , 'price':['exact']}
